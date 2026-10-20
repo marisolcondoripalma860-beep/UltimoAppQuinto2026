@@ -1,0 +1,7 @@
+{
+  "name": "ultimoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
