@@ -1,28 +1,70 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+    <ion-header>
+     <ion-toolbar color="dark">
+      <ion-title>Ejercicios Basicos</ion-title>
+     </ion-toolbar>
+   </ion-header>
+ <ion-content>
+      <h1>las cuatro operaciones </h1>
+      <ion-item>
+        <p>suma:{{a+b}}</p>
+        <p>resta:{{a-b}}</p>
+        <p>multiplicacion:{{a*b}}</p>
+        <p>division:{{a/b}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Ingrese a:"placeholder="ingrese un numero" type="number" v-model.number="a"/>
+        <ion-input label="Ingrese b:"placeholder="ingrese otro numero" type="number" v-model.number="b"/>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Ingrese nombre:"placeholder="Ingrese un nombre" type="text" v-model.number="nombre"/>
+        <ion-input label="Ingrese edad:"placeholder="Ingrese edad" type="number" v-model.number="edad"/>
+        
+      </ion-item>
+      <ion-item>
+        <ion-buttn color="danger" @click="AdicionarEst()">
+          Adicionar estudiante
+        </ion-button>
+        <ion-button color="warning" @click="AddStudent">
+          Adicionar estudiante
+        </ion-buttonv-if="a === 0">
+        <p>a diferentes de cero.</p>
+      </ion-item>
+      <ion-item v-if="b === 0">
+         <p>b diferentes de cero.</p>
+      </ion-item>
     </ion-content>
   </ion-page>
-</template>
+  <ion-item>
+ </template>
 
 <script setup lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { ref } from 'vue';
+
+const a= ref(15);
+const b=ref(3);
+const estudiantes = ref ([
+  {nombre:"Juan",edad:20},
+  {nombre:"Maria",edad:22},
+  {nombre:"Pedro",edad:19},
+  )]
+  const nombre = ref("");
+  const edad = ref(0);
+  const AddStudent =()=>{
+    nombre: nombre.value,
+    edad: edad.value,
+
+  }
+);
+nombre.value ="";
+edad.value =0;
+}
+function AdicionarEst()
+  
+}
+
 </script>
 
 <style scoped>
